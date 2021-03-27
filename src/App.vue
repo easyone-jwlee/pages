@@ -1,32 +1,36 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app id="inspire">
+    <app-bar />
+
+    <v-main class="grey lighten-5">
+      <router-view />
+    </v-main>
+  </v-app>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import AppBar from "./components/AppBar.vue";
 
-#nav {
-  padding: 30px;
+export default {
+  name: "App",
+  components: {
+    AppBar,
+  },
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+  data: () => ({
+    //
+  }),
+};
+</script>
+<style>
+/*  
+main color : #398860 
+좀 더 진한 그린: #1a3134
+제일 진한 그린: #244448
+배경 연한 그린: #eff6f3
+약간 노란 그린: #e5ead4
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+
+
+*/
 </style>
